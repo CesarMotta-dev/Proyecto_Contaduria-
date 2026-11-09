@@ -1,0 +1,4 @@
+server_version
+8.4.13
+MigrationId	ProductVersion
+20261023054030_InitialAccounting	8.0.32

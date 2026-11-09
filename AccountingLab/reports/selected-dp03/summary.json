@@ -1,0 +1,25 @@
+{
+  "recordedAtUtc": "2026-10-23T19:26:37.8827173Z",
+  "selection": "Academic",
+  "challengeId": "DP-03",
+  "deliveryIntegrity": false,
+  "exitCode": 1,
+  "results": [
+    {
+      "name": "PatternChallenges",
+      "category": "Academic",
+      "status": "Failed",
+      "exitCode": 1,
+      "reason": null,
+      "counters": {
+        "total": 3,
+        "executed": 3,
+        "passed": 0,
+        "failed": 3,
+        "notExecuted": 0,
+        "error": 0,
+        "aborted": 0
+      }
+    }
+  ]
+}

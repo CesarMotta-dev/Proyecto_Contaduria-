@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="4dbe7edf-081b-4998-8bb6-e27c4ef519ec" name="leona@KINPOS-PC 2026-10-23 14:26:37" runUser="KINPOS-PC\leona" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-23T14:26:37.3690313-05:00" queuing="2026-10-23T14:26:37.3690319-05:00" start="2026-10-23T14:26:34.9209229-05:00" finish="2026-10-23T14:26:37.4162691-05:00" />
+  <TestSettings name="default" id="d7fa63be-8230-475f-ba18-1083a631df7e">
+    <Deployment runDeploymentRoot="leona_KINPOS-PC_2026-10-23_14_26_37" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="24d6c746-3243-43e3-a92e-b93ef8fbac06" testId="3883b89f-a34c-5494-1c4d-cecb360e2087" testName="AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Supports_minimal_report_without_optional_annexes" computerName="KINPOS-PC" duration="00:00:00.0188154" startTime="2026-10-23T14:26:36.8956765-05:00" endTime="2026-10-23T14:26:36.8957332-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="24d6c746-3243-43e3-a92e-b93ef8fbac06">
+      <Output>
+        <ErrorInfo>
+          <Message>AccountingLab.Domain.Education.PatternPendingException : Falta implementar el patrón académico Builder (DP-03). Consulta https://refactoring.guru/es/design-patterns/builder</Message>
+          <StackTrace>   at AccountingLab.Application.Challenges.DP03Builder.ReportAssemblyChallenge.Build(FinancialReportRequest request) in E:\actividades\actividad 3\AccountingLab\src\AccountingLab.Application\Challenges\DP-03_BUILDER\Challenge.cs:line 13&#xD;
+   at AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Supports_minimal_report_without_optional_annexes() in E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\DP-03_BUILDER\ChallengeTests.cs:line 28&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="10b740a8-e694-43c0-920b-ac553f163020" testId="a0ee8389-9a03-9a2a-d14b-7af4b2313750" testName="AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Produces_selected_sections_annexes_and_date_filter" computerName="KINPOS-PC" duration="00:00:00.0008346" startTime="2026-10-23T14:26:36.9042596-05:00" endTime="2026-10-23T14:26:36.9042599-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10b740a8-e694-43c0-920b-ac553f163020">
+      <Output>
+        <ErrorInfo>
+          <Message>AccountingLab.Domain.Education.PatternPendingException : Falta implementar el patrón académico Builder (DP-03). Consulta https://refactoring.guru/es/design-patterns/builder</Message>
+          <StackTrace>   at AccountingLab.Application.Challenges.DP03Builder.ReportAssemblyChallenge.Build(FinancialReportRequest request) in E:\actividades\actividad 3\AccountingLab\src\AccountingLab.Application\Challenges\DP-03_BUILDER\Challenge.cs:line 13&#xD;
+   at AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Produces_selected_sections_annexes_and_date_filter() in E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\DP-03_BUILDER\ChallengeTests.cs:line 13&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f15f7836-fad7-4a07-827f-32e039df81e0" testId="f16c3490-1cac-dee8-5fcd-6b8d2d1a8f64" testName="AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Rejects_report_with_inverted_accounting_interval" computerName="KINPOS-PC" duration="00:00:00.0070124" startTime="2026-10-23T14:26:36.9070458-05:00" endTime="2026-10-23T14:26:36.9070461-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f15f7836-fad7-4a07-827f-32e039df81e0">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match&#xD;
+Expected: typeof(System.ArgumentException)&#xD;
+Actual:   typeof(AccountingLab.Domain.Education.PatternPendingException)&#xD;
+---- AccountingLab.Domain.Education.PatternPendingException : Falta implementar el patrón académico Builder (DP-03). Consulta https://refactoring.guru/es/design-patterns/builder</Message>
+          <StackTrace>   at AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Rejects_report_with_inverted_accounting_interval() in E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\DP-03_BUILDER\ChallengeTests.cs:line 23&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+----- Inner Stack Trace -----&#xD;
+   at AccountingLab.Application.Challenges.DP03Builder.ReportAssemblyChallenge.Build(FinancialReportRequest request) in E:\actividades\actividad 3\AccountingLab\src\AccountingLab.Application\Challenges\DP-03_BUILDER\Challenge.cs:line 13&#xD;
+   at AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.&lt;&gt;c.&lt;Rejects_report_with_inverted_accounting_interval&gt;b__1_0() in E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\DP-03_BUILDER\ChallengeTests.cs:line 23</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Rejects_report_with_inverted_accounting_interval" storage="e:\actividades\actividad 3\accountinglab\tests\accountinglab.patternchallenges\bin\release\net8.0\accountinglab.patternchallenges.dll" id="f16c3490-1cac-dee8-5fcd-6b8d2d1a8f64">
+      <Execution id="f15f7836-fad7-4a07-827f-32e039df81e0" />
+      <TestMethod codeBase="E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\bin\Release\net8.0\AccountingLab.PatternChallenges.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests" name="Rejects_report_with_inverted_accounting_interval" />
+    </UnitTest>
+    <UnitTest name="AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Produces_selected_sections_annexes_and_date_filter" storage="e:\actividades\actividad 3\accountinglab\tests\accountinglab.patternchallenges\bin\release\net8.0\accountinglab.patternchallenges.dll" id="a0ee8389-9a03-9a2a-d14b-7af4b2313750">
+      <Execution id="10b740a8-e694-43c0-920b-ac553f163020" />
+      <TestMethod codeBase="E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\bin\Release\net8.0\AccountingLab.PatternChallenges.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests" name="Produces_selected_sections_annexes_and_date_filter" />
+    </UnitTest>
+    <UnitTest name="AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Supports_minimal_report_without_optional_annexes" storage="e:\actividades\actividad 3\accountinglab\tests\accountinglab.patternchallenges\bin\release\net8.0\accountinglab.patternchallenges.dll" id="3883b89f-a34c-5494-1c4d-cecb360e2087">
+      <Execution id="24d6c746-3243-43e3-a92e-b93ef8fbac06" />
+      <TestMethod codeBase="E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\bin\Release\net8.0\AccountingLab.PatternChallenges.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests" name="Supports_minimal_report_without_optional_annexes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="3883b89f-a34c-5494-1c4d-cecb360e2087" executionId="24d6c746-3243-43e3-a92e-b93ef8fbac06" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a0ee8389-9a03-9a2a-d14b-7af4b2313750" executionId="10b740a8-e694-43c0-920b-ac553f163020" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f16c3490-1cac-dee8-5fcd-6b8d2d1a8f64" executionId="f15f7836-fad7-4a07-827f-32e039df81e0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Resultados sin formato de lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="0" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 8.0.32)&#xD;
+[xUnit.net 00:00:00.24]   Discovering: AccountingLab.PatternChallenges&#xD;
+[xUnit.net 00:00:00.41]   Discovered:  AccountingLab.PatternChallenges&#xD;
+[xUnit.net 00:00:00.42]   Starting:    AccountingLab.PatternChallenges&#xD;
+[xUnit.net 00:00:00.57]       AccountingLab.Domain.Education.PatternPendingException : Falta implementar el patrón académico Builder (DP-03). Consulta https://refactoring.guru/es/design-patterns/builder&#xD;
+[xUnit.net 00:00:00.57]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.57]         E:\actividades\actividad 3\AccountingLab\src\AccountingLab.Application\Challenges\DP-03_BUILDER\Challenge.cs(13,0): at AccountingLab.Application.Challenges.DP03Builder.ReportAssemblyChallenge.Build(FinancialReportRequest request)&#xD;
+[xUnit.net 00:00:00.57]         E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\DP-03_BUILDER\ChallengeTests.cs(28,0): at AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Supports_minimal_report_without_optional_annexes()&#xD;
+[xUnit.net 00:00:00.57]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+[xUnit.net 00:00:00.57]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.58]       AccountingLab.Domain.Education.PatternPendingException : Falta implementar el patrón académico Builder (DP-03). Consulta https://refactoring.guru/es/design-patterns/builder&#xD;
+[xUnit.net 00:00:00.58]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.58]         E:\actividades\actividad 3\AccountingLab\src\AccountingLab.Application\Challenges\DP-03_BUILDER\Challenge.cs(13,0): at AccountingLab.Application.Challenges.DP03Builder.ReportAssemblyChallenge.Build(FinancialReportRequest request)&#xD;
+[xUnit.net 00:00:00.58]         E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\DP-03_BUILDER\ChallengeTests.cs(13,0): at AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Produces_selected_sections_annexes_and_date_filter()&#xD;
+[xUnit.net 00:00:00.58]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+[xUnit.net 00:00:00.58]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.59]       Assert.Throws() Failure: Exception type was not an exact match&#xD;
+[xUnit.net 00:00:00.59]       Expected: typeof(System.ArgumentException)&#xD;
+[xUnit.net 00:00:00.59]       Actual:   typeof(AccountingLab.Domain.Education.PatternPendingException)&#xD;
+[xUnit.net 00:00:00.59]       ---- AccountingLab.Domain.Education.PatternPendingException : Falta implementar el patrón académico Builder (DP-03). Consulta https://refactoring.guru/es/design-patterns/builder&#xD;
+[xUnit.net 00:00:00.59]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.59]         E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\DP-03_BUILDER\ChallengeTests.cs(23,0): at AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Rejects_report_with_inverted_accounting_interval()&#xD;
+[xUnit.net 00:00:00.59]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+[xUnit.net 00:00:00.59]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.59]         ----- Inner Stack Trace -----&#xD;
+[xUnit.net 00:00:00.59]         E:\actividades\actividad 3\AccountingLab\src\AccountingLab.Application\Challenges\DP-03_BUILDER\Challenge.cs(13,0): at AccountingLab.Application.Challenges.DP03Builder.ReportAssemblyChallenge.Build(FinancialReportRequest request)&#xD;
+[xUnit.net 00:00:00.59]         E:\actividades\actividad 3\AccountingLab\tests\AccountingLab.PatternChallenges\DP-03_BUILDER\ChallengeTests.cs(23,0): at AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.&lt;&gt;c.&lt;Rejects_report_with_inverted_accounting_interval&gt;b__1_0()&#xD;
+[xUnit.net 00:00:00.59]   Finished:    AccountingLab.PatternChallenges&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="KINPOS-PC" outcome="Error" timestamp="2026-10-23T14:26:36.8899012-05:00">
+        <Text>[xUnit.net 00:00:00.57]     AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Supports_minimal_report_without_optional_annexes [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="KINPOS-PC" outcome="Error" timestamp="2026-10-23T14:26:36.9038239-05:00">
+        <Text>[xUnit.net 00:00:00.58]     AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Produces_selected_sections_annexes_and_date_filter [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="KINPOS-PC" outcome="Error" timestamp="2026-10-23T14:26:36.9061609-05:00">
+        <Text>[xUnit.net 00:00:00.59]     AccountingLab.PatternChallenges.DP03Builder.DP03BuilderTests.Rejects_report_with_inverted_accounting_interval [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

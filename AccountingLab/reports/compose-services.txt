@@ -1,0 +1,6 @@
+NAME                                    IMAGE                                COMMAND                  SERVICE      CREATED              STATUS                      PORTS
+accountinglab-actividad3-api-1          accountinglab-actividad3-api:local   "dotnet AccountingLa…"   api          About a minute ago   Up 41 seconds (healthy)     127.0.0.1:5208->8080/tcp
+accountinglab-actividad3-frontend-1     accountinglab-actividad3-frontend    "/docker-entrypoint.…"   frontend     About a minute ago   Up 28 seconds               127.0.0.1:5173->80/tcp
+accountinglab-actividad3-migrate-1      accountinglab-actividad3-api:local   "dotnet AccountingLa…"   migrate      About a minute ago   Exited (0) 50 seconds ago   
+accountinglab-actividad3-mysql-1        mysql:8.4                            "docker-entrypoint.s…"   mysql        14 hours ago         Up 14 hours (healthy)       127.0.0.1:3308->3306/tcp
+accountinglab-actividad3-mysql-test-1   mysql:8.4                            "docker-entrypoint.s…"   mysql-test   14 hours ago         Up 14 hours (healthy)       127.0.0.1:3309->3306/tcp

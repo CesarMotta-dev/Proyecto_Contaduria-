@@ -1,0 +1,16 @@
+**/bin
+**/obj
+**/node_modules
+**/dist
+**/TestResults
+**/.git
+.env
+.env.*
+!.env.example
+artifacts
+reports
+frontend/output
+frontend/.playwright-cli
+.tools
+**/*.user
+**/*.suo

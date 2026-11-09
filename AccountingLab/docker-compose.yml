@@ -1,0 +1,94 @@
+name: accountinglab-actividad3
+
+x-app-environment: &app-environment
+  ASPNETCORE_ENVIRONMENT: Development
+  ASPNETCORE_HTTP_PORTS: "8080"
+  ConnectionStrings__AccountingLab: "Server=mysql;Port=3306;Database=${MYSQL_DATABASE:-accountinglab};User=${MYSQL_USER:-accountinglab_app};Password=${MYSQL_PASSWORD:?Define MYSQL_PASSWORD en .env};"
+  Demo__Email: ${DEMO_EMAIL:-docente@accountinglab.local}
+  Demo__Password: ${DEMO_PASSWORD:?Define DEMO_PASSWORD en .env}
+  Authentication__SigningKey: ${JWT_SIGNING_KEY:?Define JWT_SIGNING_KEY de al menos 32 caracteres en .env}
+  Authentication__Issuer: AccountingLab
+  Authentication__Audience: AccountingLab.Web
+
+services:
+  mysql:
+    image: ${MYSQL_IMAGE:-mysql:8.4}
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-accountinglab}
+      MYSQL_USER: ${MYSQL_USER:-accountinglab_app}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Define MYSQL_PASSWORD en .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Define MYSQL_ROOT_PASSWORD en .env}
+    ports:
+      - "127.0.0.1:3308:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=\"$$MYSQL_ROOT_PASSWORD\" mysqladmin ping --host=127.0.0.1 --user=root --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  migrate:
+    image: accountinglab-actividad3-api:local
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment: *app-environment
+    command: ["--migrate-only"]
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    image: accountinglab-actividad3-api:local
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment: *app-environment
+    ports:
+      - "127.0.0.1:5208:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://localhost:8080/health/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:5173:80"
+    depends_on:
+      api:
+        condition: service_healthy
+
+  mysql-test:
+    image: ${MYSQL_IMAGE:-mysql:8.4}
+    profiles: ["tests"]
+    environment:
+      MYSQL_DATABASE: ${MYSQL_TEST_DATABASE:-accountinglab_tests}
+      MYSQL_USER: ${MYSQL_TEST_USER:-accountinglab_test}
+      MYSQL_PASSWORD: ${MYSQL_TEST_PASSWORD:?Define MYSQL_TEST_PASSWORD en .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_TEST_ROOT_PASSWORD:?Define MYSQL_TEST_ROOT_PASSWORD en .env}
+    ports:
+      - "127.0.0.1:3309:3306"
+    tmpfs:
+      - /var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=\"$$MYSQL_ROOT_PASSWORD\" mysqladmin ping --host=127.0.0.1 --user=root --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+volumes:
+  mysql-data:

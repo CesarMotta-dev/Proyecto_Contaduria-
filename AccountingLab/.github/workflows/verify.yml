@@ -1,0 +1,148 @@
+name: AccountingLab verification
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  base:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: ci-only-root-password
+          MYSQL_DATABASE: accountinglab_tests
+          MYSQL_USER: accountinglab_test
+          MYSQL_PASSWORD: ci-only-test-password
+        ports:
+          - 3309:3306
+        options: >-
+          --health-cmd="mysqladmin ping --host=127.0.0.1 --user=root --password=ci-only-root-password --silent"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=30
+    env:
+      ConnectionStrings__AccountingLabTest: Server=127.0.0.1;Port=3309;Database=accountinglab_tests;User=accountinglab_test;Password=ci-only-test-password;
+      Demo__Password: Ci_Only_Demo_123!
+      Authentication__SigningKey: Ci_Only_Signing_Key_At_Least_32_Characters_123!
+      Authentication__Issuer: AccountingLab
+      Authentication__Audience: AccountingLab.Web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Build backend
+        run: dotnet build AccountingLab.sln --configuration Release
+      - name: Base tests against isolated MySQL
+        shell: pwsh
+        run: ./scripts/Invoke-Tests.ps1 -Category Base -ResultsDirectory ./artifacts/ci/base
+      - name: Preserve original results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: base-results
+          path: artifacts/
+          if-no-files-found: warn
+
+  architecture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Architecture tests
+        shell: pwsh
+        run: ./scripts/Invoke-Tests.ps1 -Category Architecture -ResultsDirectory ./artifacts/ci/architecture
+      - name: Preserve original results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: architecture-results
+          path: artifacts/
+          if-no-files-found: warn
+
+  academic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Academic tests with original failure status
+        shell: pwsh
+        run: ./scripts/Invoke-Tests.ps1 -Category Academic -ResultsDirectory ./artifacts/ci/academic
+      - name: Preserve original results even on expected academic failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: academic-results
+          path: artifacts/
+          if-no-files-found: warn
+
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Traceability checks after student progress
+        shell: pwsh
+        run: ./scripts/Test-Integrity.ps1
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Preserve frontend test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-results
+          path: frontend/output/tests/
+          if-no-files-found: warn
+
+  containers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compose configuration
+        run: docker compose --env-file .env.example config --quiet
+      - name: Build, migrate and start local environment
+        run: docker compose --env-file .env.example up --build -d --wait mysql api frontend
+      - name: Check real availability
+        run: |
+          curl --fail --silent http://localhost:5208/health/ready
+          curl --fail --silent http://localhost:5208/swagger/v1/swagger.json
+          curl --fail --silent http://localhost:5173/
+      - name: Preserve container logs
+        if: always()
+        run: |
+          mkdir -p artifacts/compose
+          docker compose --env-file .env.example ps --all > artifacts/compose/services.txt
+          docker compose --env-file .env.example logs --no-color > artifacts/compose/console.log
+      - name: Upload container evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: container-results
+          path: artifacts/compose/
+          if-no-files-found: warn
+      - name: Stop isolated services preserving volume
+        if: always()
+        run: docker compose --env-file .env.example down

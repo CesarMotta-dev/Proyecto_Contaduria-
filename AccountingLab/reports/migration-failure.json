@@ -1,0 +1,5 @@
+{
+  "scenario": "Inicialización con credenciales ficticias inválidas",
+  "exitCode": 139,
+  "expectedFailureObserved": true
+}

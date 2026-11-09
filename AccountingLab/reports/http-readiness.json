@@ -1,0 +1,7 @@
+{
+  "/health/live": 200,
+  "/health/ready": 200,
+  "/swagger/v1/swagger.json": 200,
+  "web": 200,
+  "openApiPaths": 53
+}

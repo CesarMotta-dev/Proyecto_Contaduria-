@@ -1,0 +1,117 @@
+{
+  "total": 66,
+  "groups": [
+    {
+      "id": "DP-01",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-02",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-03",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-04",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-05",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-06",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-07",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-08",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-09",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-10",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-11",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-12",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-13",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-14",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-15",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-16",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-17",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-18",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-19",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-20",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-21",
+      "count": 3,
+      "allOwnPending": true
+    },
+    {
+      "id": "DP-22",
+      "count": 3,
+      "allOwnPending": true
+    }
+  ],
+  "allExpected": true,
+  "patterns": 22
+}

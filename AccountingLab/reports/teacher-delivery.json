@@ -1,0 +1,1122 @@
+{
+  "recordedAtUtc": "2026-10-23T19:25:26.9973212Z",
+  "purpose": "Comprobación exclusiva de la entrega docente inicial; no es una prueba funcional del alumno ni acredita los 66 casos académicos.",
+  "companyId": "ed8ae183-7294-4e5f-8f70-cd61505b23eb",
+  "baseUrl": "http://127.0.0.1:5208",
+  "businessStateBefore": {
+    "accounts": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "periods": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "third-parties": {
+      "items": [
+        {
+          "id": "1a220a76-c834-4c85-b370-a91ecc3c9b01",
+          "companyId": "ed8ae183-7294-4e5f-8f70-cd61505b23eb",
+          "name": "Tercero ficticio de revisión",
+          "document": "7a443693e3794cedab42d12d6eefa45a",
+          "email": "teacher-party@example.invalid"
+        }
+      ],
+      "total": 1,
+      "page": 1,
+      "pageSize": 100
+    },
+    "cost-centers": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "tax-rules": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "journal-entries": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "receivables": {
+      "items": [
+        {
+          "id": "95909ba1-1973-4434-9a95-85b825d302dd",
+          "companyId": "ed8ae183-7294-4e5f-8f70-cd61505b23eb",
+          "thirdPartyId": "1a220a76-c834-4c85-b370-a91ecc3c9b01",
+          "kind": "Receivable",
+          "description": "Obligación que debe conservarse",
+          "amount": "100",
+          "dueDate": "2026-12-31",
+          "status": "Open"
+        }
+      ],
+      "total": 1,
+      "page": 1,
+      "pageSize": 100
+    },
+    "payables": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "payments": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "invoices": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "bank-statements": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "bank-reconciliation": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "budgets": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "approvals": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "notifications": {
+      "items": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 100
+    },
+    "audit": {
+      "items": [
+        {
+          "id": "be6177ea-676f-404c-881b-ebf353f2c835",
+          "companyId": "ed8ae183-7294-4e5f-8f70-cd61505b23eb",
+          "userId": "fed7b6ac-8ce0-4205-a447-11c3da185892",
+          "resourceId": "95909ba1-1973-4434-9a95-85b825d302dd",
+          "action": "Created",
+          "resource": "Obligation",
+          "occurredAt": "2026-10-23T19:24:50.977451"
+        },
+        {
+          "id": "f44df044-17c7-434f-8f85-920ff578a89a",
+          "companyId": "ed8ae183-7294-4e5f-8f70-cd61505b23eb",
+          "userId": "fed7b6ac-8ce0-4205-a447-11c3da185892",
+          "resourceId": "1a220a76-c834-4c85-b370-a91ecc3c9b01",
+          "action": "Created",
+          "resource": "ThirdParty",
+          "occurredAt": "2026-10-23T19:24:50.884299"
+        }
+      ],
+      "total": 2,
+      "page": 1,
+      "pageSize": 100
+    },
+    "summary": {
+      "debits": "0",
+      "credits": "0",
+      "balance": "0",
+      "entryCount": 0,
+      "receivableTotal": "100",
+      "payableTotal": "0"
+    }
+  },
+  "expectedChecks": 44,
+  "completedChecks": 44,
+  "results": [
+    {
+      "id": "DP-01",
+      "kind": "Module",
+      "route": "/api/vouchers/generate",
+      "status": 501,
+      "challengeId": "DP-01",
+      "correlationId": "0HNPH7BA4VQ88:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Factory Method (DP-01). Consulta https://refactoring.guru/es/design-patterns/factory-method",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQ88:00000001",
+        "challengeId": "DP-01",
+        "patternName": "Factory Method",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/factory-method"
+      }
+    },
+    {
+      "id": "DP-01",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-01/execute",
+      "status": 501,
+      "challengeId": "DP-01",
+      "correlationId": "0HNPH7BA4VQ8Q:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Factory Method (DP-01). Consulta https://refactoring.guru/es/design-patterns/factory-method",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQ8Q:00000001",
+        "challengeId": "DP-01",
+        "patternName": "Factory Method",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/factory-method"
+      }
+    },
+    {
+      "id": "DP-02",
+      "kind": "Module",
+      "route": "/api/companies/profile-services",
+      "status": 501,
+      "challengeId": "DP-02",
+      "correlationId": "0HNPH7BA4VQ9D:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Abstract Factory (DP-02). Consulta https://refactoring.guru/es/design-patterns/abstract-factory",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQ9D:00000001",
+        "challengeId": "DP-02",
+        "patternName": "Abstract Factory",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/abstract-factory"
+      }
+    },
+    {
+      "id": "DP-02",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-02/execute",
+      "status": 501,
+      "challengeId": "DP-02",
+      "correlationId": "0HNPH7BA4VQ9V:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Abstract Factory (DP-02). Consulta https://refactoring.guru/es/design-patterns/abstract-factory",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQ9V:00000001",
+        "challengeId": "DP-02",
+        "patternName": "Abstract Factory",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/abstract-factory"
+      }
+    },
+    {
+      "id": "DP-03",
+      "kind": "Module",
+      "route": "/api/reports/build",
+      "status": 501,
+      "challengeId": "DP-03",
+      "correlationId": "0HNPH7BA4VQAH:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Builder (DP-03). Consulta https://refactoring.guru/es/design-patterns/builder",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQAH:00000001",
+        "challengeId": "DP-03",
+        "patternName": "Builder",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/builder"
+      }
+    },
+    {
+      "id": "DP-03",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-03/execute",
+      "status": 501,
+      "challengeId": "DP-03",
+      "correlationId": "0HNPH7BA4VQB3:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Builder (DP-03). Consulta https://refactoring.guru/es/design-patterns/builder",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQB3:00000001",
+        "challengeId": "DP-03",
+        "patternName": "Builder",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/builder"
+      }
+    },
+    {
+      "id": "DP-04",
+      "kind": "Module",
+      "route": "/api/templates/copy",
+      "status": 501,
+      "challengeId": "DP-04",
+      "correlationId": "0HNPH7BA4VQBL:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Prototype (DP-04). Consulta https://refactoring.guru/es/design-patterns/prototype",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQBL:00000001",
+        "challengeId": "DP-04",
+        "patternName": "Prototype",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/prototype"
+      }
+    },
+    {
+      "id": "DP-04",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-04/execute",
+      "status": 501,
+      "challengeId": "DP-04",
+      "correlationId": "0HNPH7BA4VQC7:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Prototype (DP-04). Consulta https://refactoring.guru/es/design-patterns/prototype",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQC7:00000001",
+        "challengeId": "DP-04",
+        "patternName": "Prototype",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/prototype"
+      }
+    },
+    {
+      "id": "DP-05",
+      "kind": "Module",
+      "route": "/api/configuration/registry",
+      "status": 501,
+      "challengeId": "DP-05",
+      "correlationId": "0HNPH7BA4VQCP:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Singleton (DP-05). Consulta https://refactoring.guru/es/design-patterns/singleton",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQCP:00000001",
+        "challengeId": "DP-05",
+        "patternName": "Singleton",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/singleton"
+      }
+    },
+    {
+      "id": "DP-05",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-05/execute",
+      "status": 501,
+      "challengeId": "DP-05",
+      "correlationId": "0HNPH7BA4VQDB:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Singleton (DP-05). Consulta https://refactoring.guru/es/design-patterns/singleton",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQDB:00000001",
+        "challengeId": "DP-05",
+        "patternName": "Singleton",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/singleton"
+      }
+    },
+    {
+      "id": "DP-06",
+      "kind": "Module",
+      "route": "/api/bank-statements/import",
+      "status": 501,
+      "challengeId": "DP-06",
+      "correlationId": "0HNPH7BA4VQDT:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Adapter (DP-06). Consulta https://refactoring.guru/es/design-patterns/adapter",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQDT:00000001",
+        "challengeId": "DP-06",
+        "patternName": "Adapter",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/adapter"
+      }
+    },
+    {
+      "id": "DP-06",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-06/execute",
+      "status": 501,
+      "challengeId": "DP-06",
+      "correlationId": "0HNPH7BA4VQEF:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Adapter (DP-06). Consulta https://refactoring.guru/es/design-patterns/adapter",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQEF:00000001",
+        "challengeId": "DP-06",
+        "patternName": "Adapter",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/adapter"
+      }
+    },
+    {
+      "id": "DP-07",
+      "kind": "Module",
+      "route": "/api/reports/render",
+      "status": 501,
+      "challengeId": "DP-07",
+      "correlationId": "0HNPH7BA4VQF1:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Bridge (DP-07). Consulta https://refactoring.guru/es/design-patterns/bridge",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQF1:00000001",
+        "challengeId": "DP-07",
+        "patternName": "Bridge",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/bridge"
+      }
+    },
+    {
+      "id": "DP-07",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-07/execute",
+      "status": 501,
+      "challengeId": "DP-07",
+      "correlationId": "0HNPH7BA4VQFJ:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Bridge (DP-07). Consulta https://refactoring.guru/es/design-patterns/bridge",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQFJ:00000001",
+        "challengeId": "DP-07",
+        "patternName": "Bridge",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/bridge"
+      }
+    },
+    {
+      "id": "DP-08",
+      "kind": "Module",
+      "route": "/api/accounts/tree-total",
+      "status": 501,
+      "challengeId": "DP-08",
+      "correlationId": "0HNPH7BA4VQG5:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Composite (DP-08). Consulta https://refactoring.guru/es/design-patterns/composite",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQG5:00000001",
+        "challengeId": "DP-08",
+        "patternName": "Composite",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/composite"
+      }
+    },
+    {
+      "id": "DP-08",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-08/execute",
+      "status": 501,
+      "challengeId": "DP-08",
+      "correlationId": "0HNPH7BA4VQGO:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Composite (DP-08). Consulta https://refactoring.guru/es/design-patterns/composite",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQGO:00000001",
+        "challengeId": "DP-08",
+        "patternName": "Composite",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/composite"
+      }
+    },
+    {
+      "id": "DP-09",
+      "kind": "Module",
+      "route": "/api/exports/enriched",
+      "status": 501,
+      "challengeId": "DP-09",
+      "correlationId": "0HNPH7BA4VQHA:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Decorator (DP-09). Consulta https://refactoring.guru/es/design-patterns/decorator",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQHA:00000001",
+        "challengeId": "DP-09",
+        "patternName": "Decorator",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/decorator"
+      }
+    },
+    {
+      "id": "DP-09",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-09/execute",
+      "status": 501,
+      "challengeId": "DP-09",
+      "correlationId": "0HNPH7BA4VQHS:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Decorator (DP-09). Consulta https://refactoring.guru/es/design-patterns/decorator",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQHS:00000001",
+        "challengeId": "DP-09",
+        "patternName": "Decorator",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/decorator"
+      }
+    },
+    {
+      "id": "DP-10",
+      "kind": "Module",
+      "route": "/api/accounting-periods/close",
+      "status": 501,
+      "challengeId": "DP-10",
+      "correlationId": "0HNPH7BA4VQIE:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Facade (DP-10). Consulta https://refactoring.guru/es/design-patterns/facade",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQIE:00000001",
+        "challengeId": "DP-10",
+        "patternName": "Facade",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/facade"
+      }
+    },
+    {
+      "id": "DP-10",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-10/execute",
+      "status": 501,
+      "challengeId": "DP-10",
+      "correlationId": "0HNPH7BA4VQJ0:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Facade (DP-10). Consulta https://refactoring.guru/es/design-patterns/facade",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQJ0:00000001",
+        "challengeId": "DP-10",
+        "patternName": "Facade",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/facade"
+      }
+    },
+    {
+      "id": "DP-11",
+      "kind": "Module",
+      "route": "/api/movements/classifications",
+      "status": 501,
+      "challengeId": "DP-11",
+      "correlationId": "0HNPH7BA4VQJI:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Flyweight (DP-11). Consulta https://refactoring.guru/es/design-patterns/flyweight",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQJI:00000001",
+        "challengeId": "DP-11",
+        "patternName": "Flyweight",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/flyweight"
+      }
+    },
+    {
+      "id": "DP-11",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-11/execute",
+      "status": 501,
+      "challengeId": "DP-11",
+      "correlationId": "0HNPH7BA4VQK5:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Flyweight (DP-11). Consulta https://refactoring.guru/es/design-patterns/flyweight",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQK5:00000001",
+        "challengeId": "DP-11",
+        "patternName": "Flyweight",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/flyweight"
+      }
+    },
+    {
+      "id": "DP-12",
+      "kind": "Module",
+      "route": "/api/reports/confidential",
+      "status": 501,
+      "challengeId": "DP-12",
+      "correlationId": "0HNPH7BA4VQKN:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Proxy (DP-12). Consulta https://refactoring.guru/es/design-patterns/proxy",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQKN:00000001",
+        "challengeId": "DP-12",
+        "patternName": "Proxy",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/proxy"
+      }
+    },
+    {
+      "id": "DP-12",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-12/execute",
+      "status": 501,
+      "challengeId": "DP-12",
+      "correlationId": "0HNPH7BA4VQL9:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Proxy (DP-12). Consulta https://refactoring.guru/es/design-patterns/proxy",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQL9:00000001",
+        "challengeId": "DP-12",
+        "patternName": "Proxy",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/proxy"
+      }
+    },
+    {
+      "id": "DP-13",
+      "kind": "Module",
+      "route": "/api/payments/approve",
+      "status": 501,
+      "challengeId": "DP-13",
+      "correlationId": "0HNPH7BA4VQLR:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Chain of Responsibility (DP-13). Consulta https://refactoring.guru/es/design-patterns/chain-of-responsibility",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQLR:00000001",
+        "challengeId": "DP-13",
+        "patternName": "Chain of Responsibility",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/chain-of-responsibility"
+      }
+    },
+    {
+      "id": "DP-13",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-13/execute",
+      "status": 501,
+      "challengeId": "DP-13",
+      "correlationId": "0HNPH7BA4VQMD:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Chain of Responsibility (DP-13). Consulta https://refactoring.guru/es/design-patterns/chain-of-responsibility",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQMD:00000001",
+        "challengeId": "DP-13",
+        "patternName": "Chain of Responsibility",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/chain-of-responsibility"
+      }
+    },
+    {
+      "id": "DP-14",
+      "kind": "Module",
+      "route": "/api/operations/execute",
+      "status": 501,
+      "challengeId": "DP-14",
+      "correlationId": "0HNPH7BA4VQMV:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Command (DP-14). Consulta https://refactoring.guru/es/design-patterns/command",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQMV:00000001",
+        "challengeId": "DP-14",
+        "patternName": "Command",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/command"
+      }
+    },
+    {
+      "id": "DP-14",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-14/execute",
+      "status": 501,
+      "challengeId": "DP-14",
+      "correlationId": "0HNPH7BA4VQNH:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Command (DP-14). Consulta https://refactoring.guru/es/design-patterns/command",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQNH:00000001",
+        "challengeId": "DP-14",
+        "patternName": "Command",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/command"
+      }
+    },
+    {
+      "id": "DP-15",
+      "kind": "Module",
+      "route": "/api/ledger/traverse",
+      "status": 501,
+      "challengeId": "DP-15",
+      "correlationId": "0HNPH7BA4VQO3:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Iterator (DP-15). Consulta https://refactoring.guru/es/design-patterns/iterator",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQO3:00000001",
+        "challengeId": "DP-15",
+        "patternName": "Iterator",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/iterator"
+      }
+    },
+    {
+      "id": "DP-15",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-15/execute",
+      "status": 501,
+      "challengeId": "DP-15",
+      "correlationId": "0HNPH7BA4VQOL:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Iterator (DP-15). Consulta https://refactoring.guru/es/design-patterns/iterator",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQOL:00000001",
+        "challengeId": "DP-15",
+        "patternName": "Iterator",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/iterator"
+      }
+    },
+    {
+      "id": "DP-16",
+      "kind": "Module",
+      "route": "/api/invoices/process",
+      "status": 501,
+      "challengeId": "DP-16",
+      "correlationId": "0HNPH7BA4VQP7:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Mediator (DP-16). Consulta https://refactoring.guru/es/design-patterns/mediator",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQP7:00000001",
+        "challengeId": "DP-16",
+        "patternName": "Mediator",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/mediator"
+      }
+    },
+    {
+      "id": "DP-16",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-16/execute",
+      "status": 501,
+      "challengeId": "DP-16",
+      "correlationId": "0HNPH7BA4VQPP:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Mediator (DP-16). Consulta https://refactoring.guru/es/design-patterns/mediator",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQPP:00000001",
+        "challengeId": "DP-16",
+        "patternName": "Mediator",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/mediator"
+      }
+    },
+    {
+      "id": "DP-17",
+      "kind": "Module",
+      "route": "/api/budgets/snapshots",
+      "status": 501,
+      "challengeId": "DP-17",
+      "correlationId": "0HNPH7BA4VQQB:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Memento (DP-17). Consulta https://refactoring.guru/es/design-patterns/memento",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQQB:00000001",
+        "challengeId": "DP-17",
+        "patternName": "Memento",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/memento"
+      }
+    },
+    {
+      "id": "DP-17",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-17/execute",
+      "status": 501,
+      "challengeId": "DP-17",
+      "correlationId": "0HNPH7BA4VQQT:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Memento (DP-17). Consulta https://refactoring.guru/es/design-patterns/memento",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQQT:00000001",
+        "challengeId": "DP-17",
+        "patternName": "Memento",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/memento"
+      }
+    },
+    {
+      "id": "DP-18",
+      "kind": "Module",
+      "route": "/api/notifications/publish",
+      "status": 501,
+      "challengeId": "DP-18",
+      "correlationId": "0HNPH7BA4VQRF:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Observer (DP-18). Consulta https://refactoring.guru/es/design-patterns/observer",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQRF:00000001",
+        "challengeId": "DP-18",
+        "patternName": "Observer",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/observer"
+      }
+    },
+    {
+      "id": "DP-18",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-18/execute",
+      "status": 501,
+      "challengeId": "DP-18",
+      "correlationId": "0HNPH7BA4VQS1:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Observer (DP-18). Consulta https://refactoring.guru/es/design-patterns/observer",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQS1:00000001",
+        "challengeId": "DP-18",
+        "patternName": "Observer",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/observer"
+      }
+    },
+    {
+      "id": "DP-19",
+      "kind": "Module",
+      "route": "/api/invoices/transition",
+      "status": 501,
+      "challengeId": "DP-19",
+      "correlationId": "0HNPH7BA4VQSJ:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico State (DP-19). Consulta https://refactoring.guru/es/design-patterns/state",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQSJ:00000001",
+        "challengeId": "DP-19",
+        "patternName": "State",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/state"
+      }
+    },
+    {
+      "id": "DP-19",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-19/execute",
+      "status": 501,
+      "challengeId": "DP-19",
+      "correlationId": "0HNPH7BA4VQT5:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico State (DP-19). Consulta https://refactoring.guru/es/design-patterns/state",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQT5:00000001",
+        "challengeId": "DP-19",
+        "patternName": "State",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/state"
+      }
+    },
+    {
+      "id": "DP-20",
+      "kind": "Module",
+      "route": "/api/taxes/calculate",
+      "status": 501,
+      "challengeId": "DP-20",
+      "correlationId": "0HNPH7BA4VQTN:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Strategy (DP-20). Consulta https://refactoring.guru/es/design-patterns/strategy",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQTN:00000001",
+        "challengeId": "DP-20",
+        "patternName": "Strategy",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/strategy"
+      }
+    },
+    {
+      "id": "DP-20",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-20/execute",
+      "status": 501,
+      "challengeId": "DP-20",
+      "correlationId": "0HNPH7BA4VQU9:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Strategy (DP-20). Consulta https://refactoring.guru/es/design-patterns/strategy",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQU9:00000001",
+        "challengeId": "DP-20",
+        "patternName": "Strategy",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/strategy"
+      }
+    },
+    {
+      "id": "DP-21",
+      "kind": "Module",
+      "route": "/api/bank-reconciliation/reconcile",
+      "status": 501,
+      "challengeId": "DP-21",
+      "correlationId": "0HNPH7BA4VQUS:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Template Method (DP-21). Consulta https://refactoring.guru/es/design-patterns/template-method",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQUS:00000001",
+        "challengeId": "DP-21",
+        "patternName": "Template Method",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/template-method"
+      }
+    },
+    {
+      "id": "DP-21",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-21/execute",
+      "status": 501,
+      "challengeId": "DP-21",
+      "correlationId": "0HNPH7BA4VQVE:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Template Method (DP-21). Consulta https://refactoring.guru/es/design-patterns/template-method",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VQVE:00000001",
+        "challengeId": "DP-21",
+        "patternName": "Template Method",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/template-method"
+      }
+    },
+    {
+      "id": "DP-22",
+      "kind": "Module",
+      "route": "/api/documents/analyze",
+      "status": 501,
+      "challengeId": "DP-22",
+      "correlationId": "0HNPH7BA4VR00:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Visitor (DP-22). Consulta https://refactoring.guru/es/design-patterns/visitor",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VR00:00000001",
+        "challengeId": "DP-22",
+        "patternName": "Visitor",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/visitor"
+      }
+    },
+    {
+      "id": "DP-22",
+      "kind": "Educational",
+      "route": "/api/challenges/DP-22/execute",
+      "status": 501,
+      "challengeId": "DP-22",
+      "correlationId": "0HNPH7BA4VR0I:00000001",
+      "stateBefore": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "stateAfter": "4E4988D4B7331CCCA8EBC2A01C64FF0AF669AA5092E341BD8E22F474FA1DE470",
+      "businessStateUnchanged": true,
+      "initialDeliveryCheckPassed": true,
+      "response": {
+        "title": "Patrón de diseño pendiente",
+        "status": 501,
+        "detail": "Falta implementar el patrón académico Visitor (DP-22). Consulta https://refactoring.guru/es/design-patterns/visitor",
+        "code": "pattern_pending",
+        "correlationId": "0HNPH7BA4VR0I:00000001",
+        "challengeId": "DP-22",
+        "patternName": "Visitor",
+        "referenceUrl": "https://refactoring.guru/es/design-patterns/visitor"
+      }
+    }
+  ]
+}
