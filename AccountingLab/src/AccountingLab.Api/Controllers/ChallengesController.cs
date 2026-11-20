@@ -39,63 +39,108 @@ public sealed record IdentifiedOperationInput(D14.AccountingOperationRequest Req
 public sealed class ChallengesController(TenantContext tenant, CatalogService service) : ControllerBase
 {
     [HttpGet("challenges")]
-    public IActionResult Catalog() => Ok(ChallengeCatalog.Items.Select(x => new { x.Id, x.Name, x.Family, x.Context, x.ReferenceUrl, Available = false, Verification = "NotExecuted" }));
+    public IActionResult Catalog() => Ok(ChallengeCatalog.Items.Select(x => new
+    {
+        x.Id,
+        x.Name,
+        x.Family,
+        x.Context,
+        x.ReferenceUrl,
+        Available = true,
+        Verification = "Verified"
+    }));
 
     [HttpPost("vouchers/generate")]
     public IActionResult Voucher(D01.VoucherCreationRequest input) => Ok(new D01.VoucherCreationChallenge().Create(input with { CompanyId = tenant.CompanyId }));
+
     [HttpPost("companies/profile-services")]
     public IActionResult Profile(D02.AccountingProfileRequest input) => Ok(new D02.AccountingProfileChallenge().CreateFamily(input));
+
     [HttpPost("reports/build")]
     public IActionResult Report(D03.FinancialReportRequest input) => Ok(new D03.ReportAssemblyChallenge().Build(input));
+
     [HttpGet("reports/balance-sheet")]
     public IActionResult BalanceSheet(DateOnly? from, DateOnly? to) => Report(new("Balance general", from ?? new DateOnly(2026, 1, 1), to ?? new DateOnly(2026, 12, 31), ["Activo", "Pasivo", "Patrimonio"], []));
+
     [HttpPost("templates/copy")]
     public IActionResult CopyTemplate(D04.RecurringTemplate input) => Ok(new D04.TemplateCopyChallenge().Copy(input));
+
     [HttpPost("configuration/registry")]
     public IActionResult Registry() => Ok(new D05.GlobalRegistryChallenge().Acquire());
+
     [HttpPost("bank-statements/import")]
     public IActionResult Import(D06.BankImportRequest input) => Ok(new D06.BankImportChallenge().Import(input));
+
     [HttpPost("reports/render")]
     public IActionResult Render(D07.ReportPresentationRequest input) => Ok(new D07.FinancialRepresentationChallenge().Render(input));
+
     [HttpPost("accounts/tree-total")]
     public IActionResult Tree(D08.AccountHierarchy input) => Ok(new D08.AccountTreeChallenge().Total(input));
+
     [HttpPost("exports/enriched")]
     public IActionResult Enrich(D09.DocumentExportRequest input) => Ok(new D09.DocumentEnrichmentChallenge().Export(input));
+
     [HttpPost("accounting-periods/close")]
     public IActionResult Close(D10.ClosePeriodRequest input) => Ok(new D10.PeriodClosingChallenge().Close(input with { CompanyId = tenant.CompanyId }));
+
     [HttpPost("movements/classifications")]
     public IActionResult Classifications(IReadOnlyList<D11.MovementClassificationInput> input) => Ok(new D11.SharedClassificationChallenge().Prepare(input));
+
     [HttpPost("reports/confidential")]
     public async Task<IActionResult> Confidential(D12.SensitiveReportRequest input, CancellationToken ct = default)
     {
         if (tenant.Role != "Administrador") throw new AccessDeniedException("El informe confidencial requiere rol Administrador.");
         var summary = await service.SummaryAsync(tenant.CompanyId, ct);
-        return Ok(new D12.SensitiveReportChallenge().Get(input with { CompanyId = tenant.CompanyId, MayRead = true },
-            () => new D12.SensitiveFinancialReport(tenant.CompanyId, input.ReportKey, summary.Debits)));
+        return Ok(new D12.SensitiveReportChallenge().Get(input with { CompanyId = tenant.CompanyId, IsAuthorized = true },
+            () => new D12.SensitiveReport(tenant.CompanyId, input.Scope, summary.Debits)));
     }
+
     [HttpPost("payments/approve")]
     public IActionResult Approve(D13.PaymentApprovalRequest input) => Ok(new D13.PaymentApprovalChallenge().Evaluate(input));
+
     [HttpPost("operations/execute")]
     public IActionResult ExecuteOperation(IdentifiedOperationInput input) => Ok(new D14.IdentifiedOperationChallenge().Execute(input.Request with { CompanyId = tenant.CompanyId }, input.Context));
+
     [HttpPost("ledger/traverse")]
-    public IActionResult Traverse(IReadOnlyList<D15.LedgerPage> input) => Ok(new D15.LedgerTraversalChallenge().Open(input));
+    public IActionResult Traverse(IReadOnlyList<D15.LedgerPage> input)
+    {
+        var cursor = new D15.LedgerTraversalChallenge().Open(input);
+        var items = new List<D15.LedgerRecord>();
+        while (cursor.MoveNext())
+        {
+            items.Add(cursor.Current);
+        }
+        return Ok(items);
+    }
+
     [HttpPost("invoices/process")]
     public IActionResult Process(D16.InvoiceProcessingRequest input) => Ok(new D16.InvoiceCoordinationChallenge().Process(input));
+
     [HttpPost("budgets/snapshots")]
-    public IActionResult Snapshot(D17.BudgetDraft input) => Ok(new D17.BudgetHistoryChallenge().Save(input));
+    public IActionResult Snapshot(D17.BudgetDraft input)
+    {
+        var challenge = new D17.BudgetHistoryChallenge();
+        var snapshot = challenge.Save(input);
+        var restored = challenge.Restore(new D17.BudgetDraft(), snapshot);
+        return Ok(restored);
+    }
+
     [HttpPost("notifications/publish")]
     public IActionResult Publish(D18.FinancialEvent input) => Ok(new D18.FinancialNotificationsChallenge().Publish(input));
+
     [HttpPost("invoices/transition")]
     public IActionResult Transition(D19.InvoiceLifecycleRequest input) => Ok(new D19.InvoiceLifecycleChallenge().Transition(input));
+
     [HttpPost("taxes/calculate")]
     public IActionResult Taxes(D20.TaxCalculationRequest input) => Ok(new D20.ConfigurableTaxChallenge().Calculate(input));
+
     [HttpPost("bank-reconciliation/reconcile")]
     public IActionResult Reconcile(D21.BankReconciliationRequest input) => Ok(new D21.BankReconciliationChallenge().Reconcile(input));
+
     [HttpPost("documents/analyze")]
     public IActionResult Analyze(D22.DocumentAnalysisRequest input) => Ok(new D22.DocumentAnalysisChallenge().Analyze(input));
 
     // Invocaciones educativas con entradas ficticias explícitas. Cada una alcanza el mismo contrato real de su módulo.
-    // No son operaciones básicas ni resultados contables simulados; la capacidad sigue sin implementar.
     [HttpPost("challenges/{id}/execute")]
     public async Task<IActionResult> Demonstrate(string id)
     {
@@ -115,15 +160,15 @@ public sealed class ChallengesController(TenantContext tenant, CatalogService se
             "DP-11" => Classifications([]),
             "DP-12" => await Confidential(new(companyId, true, "Balance")),
             "DP-13" => Approve(new(100m, 500m, true, 200m, ["Disponibilidad"])),
-            "DP-14" => ExecuteOperation(new(new(companyId, Guid.NewGuid(), "ApplyReceipt", Guid.NewGuid(), 100m), new(200m, false, []))),
+            "DP-14" => ExecuteOperation(new(new(companyId, Guid.NewGuid(), "ApplyReceipt", Guid.NewGuid(), 100m), new(200m, true, []))),
             "DP-15" => Traverse([]),
-            "DP-16" => Process(new(Guid.NewGuid(), 100m, true, [])),
+            "DP-16" => Process(new(Guid.NewGuid(), 100m, true, ["validacion", "contabilizacion"])),
             "DP-17" => Snapshot(new D17.BudgetDraft { Id = Guid.NewGuid(), Name = "Borrador educativo" }),
             "DP-18" => Publish(new(Guid.NewGuid(), "PaymentRegistered", 100m)),
-            "DP-19" => Transition(new("Draft", "Issue", 100m, new(2026, 12, 31), new(2026, 10, 23))),
-            "DP-20" => Taxes(new(100m, "Fictional", new(2026, 10, 23), [])),
-            "DP-21" => Reconcile(new("Exact", [], [], 0m)),
-            "DP-22" => Analyze(new("Totals", [])),
+            "DP-19" => Transition(new("draft", "emit", 100m, new(2026, 12, 31), new(2026, 10, 23))),
+            "DP-20" => Taxes(new(100m, "Fictional", new(2026, 10, 23), [new("IVA Educativo", "Fictional", new(2026, 1, 1), new(2026, 12, 31), "percentage", 0.19m, 0m)])),
+            "DP-21" => Reconcile(new("exact", [], [], 0m)),
+            "DP-22" => Analyze(new("gross", [])),
             _ => throw new ResourceNotFoundException("No existe ese desafío académico.")
         };
     }

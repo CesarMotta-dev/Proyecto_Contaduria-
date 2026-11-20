@@ -19,8 +19,22 @@ public sealed class TemplateCopyChallenge : ITemplateCopyChallenge
 {
     public RecurringTemplate Copy(RecurringTemplate source)
     {
-        // TODO(STUDENT): DP-04
-        throw new PatternPendingException("DP-04");
+        ArgumentNullException.ThrowIfNull(source);
+
+        return new RecurringTemplate
+        {
+            Id = Guid.NewGuid(),
+            Name = source.Name,
+            Lines = source.Lines?
+                .Select(line => line is null
+                    ? null!
+                    : new TemplateLine
+                    {
+                        AccountCode = line.AccountCode,
+                        Amount = line.Amount,
+                        Tags = line.Tags is null ? new List<string>() : new List<string>(line.Tags)
+                    })
+                .ToList() ?? new List<TemplateLine>()
+        };
     }
 }
-

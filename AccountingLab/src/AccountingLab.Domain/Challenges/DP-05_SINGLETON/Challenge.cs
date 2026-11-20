@@ -6,10 +6,7 @@ public sealed record GlobalAccountingRegistry(string Version, int MonetaryScale,
 public interface IGlobalRegistryChallenge { GlobalAccountingRegistry Acquire(); }
 public sealed class GlobalRegistryChallenge : IGlobalRegistryChallenge
 {
-    public GlobalAccountingRegistry Acquire()
-    {
-        // TODO(STUDENT): DP-05
-        throw new PatternPendingException("DP-05");
-    }
-}
+    private static readonly GlobalAccountingRegistry _instance = new("DEMO-1", 4, "process");
 
+    public GlobalAccountingRegistry Acquire() => _instance;
+}
